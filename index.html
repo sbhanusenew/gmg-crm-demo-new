@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GMG CRM Demo Overview</title>
+    <meta
+      name="description"
+      content="Sample CRM overview with separate admin and user portals for lead management."
+    />
+    <link rel="stylesheet" href="crm-demo.css" />
+    <script defer src="crm-demo.js"></script>
+  </head>
+  <body data-page="overview">
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html">
+          <span class="brand__eyebrow">GMG Technotrades Pvt. Ltd.</span>
+          <span class="brand__name">CRM Demo</span>
+        </a>
+
+        <nav class="topnav" aria-label="Primary">
+          <a href="#overview">Overview</a>
+          <a href="#pipeline">Pipeline</a>
+          <a href="#rollout">Rollout</a>
+        </nav>
+
+        <div class="topbar-actions">
+          <a class="button button--secondary" href="user-portal.html">User Portal</a>
+          <a class="button button--primary" href="admin-portal.html">Admin Portal</a>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="section intro-band" id="overview">
+          <div class="intro-copy">
+            <p class="eyebrow">Operational Overview</p>
+            <h1>Sample CRM for lead registration, team control, and stage tracking.</h1>
+            <p class="lead-copy">
+              This prototype shows how your company CRM can work with two separate
+              portals: an admin workspace for managers and operations, and a user
+              workspace for sales teams registering and progressing leads.
+            </p>
+          </div>
+
+          <div class="intro-actions">
+            <a class="button button--primary" href="admin-portal.html">Open Admin Workspace</a>
+            <a class="button button--secondary" href="user-portal.html">Open User Workspace</a>
+          </div>
+        </section>
+
+        <section class="section stats-grid" aria-label="CRM metrics">
+          <article class="metric-card">
+            <span>Total leads</span>
+            <strong id="overview-total-leads">0</strong>
+            <p>All leads currently visible in the CRM sample.</p>
+          </article>
+          <article class="metric-card">
+            <span>Open pipeline value</span>
+            <strong id="overview-open-value">INR 0</strong>
+            <p>Estimated value across active leads.</p>
+          </article>
+          <article class="metric-card">
+            <span>Won deals</span>
+            <strong id="overview-won-count">0</strong>
+            <p>Leads converted to customers.</p>
+          </article>
+          <article class="metric-card">
+            <span>Active users</span>
+            <strong id="overview-active-users">0</strong>
+            <p>Users registered for CRM access.</p>
+          </article>
+        </section>
+
+        <section class="section split-layout" id="pipeline">
+          <div class="tool-surface">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Pipeline Snapshot</p>
+                <h2>Lead stages visible across the company</h2>
+              </div>
+            </div>
+
+            <div id="overview-stage-grid" class="stage-summary-grid"></div>
+          </div>
+
+          <div class="tool-surface">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">How It Works</p>
+                <h2>Simple workflow for both teams</h2>
+              </div>
+            </div>
+
+            <div class="step-list">
+              <article class="step-item">
+                <strong>1. Admin registers users</strong>
+                <p>
+                  Sales executives, managers, and operations users are created in the
+                  admin portal with role-based access.
+                </p>
+              </article>
+              <article class="step-item">
+                <strong>2. Users register leads</strong>
+                <p>
+                  Sales team members capture company, contact, source, value, and next
+                  action from the user portal.
+                </p>
+              </article>
+              <article class="step-item">
+                <strong>3. Progress is tracked by stage</strong>
+                <p>
+                  Every lead moves through a pipeline like New Lead, Qualified,
+                  Proposal Sent, Negotiation, Won, or Lost.
+                </p>
+              </article>
+              <article class="step-item">
+                <strong>4. Admin monitors quality and ownership</strong>
+                <p>
+                  Managers review assignments, update probabilities, watch follow-ups,
+                  and keep the CRM process consistent.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section split-layout" id="rollout">
+          <div class="tool-surface">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Recent Leads</p>
+                <h2>What the CRM looks like in practice</h2>
+              </div>
+            </div>
+
+            <div class="table-shell">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Lead ID</th>
+                    <th>Company</th>
+                    <th>Owner</th>
+                    <th>Stage</th>
+                    <th>Value</th>
+                    <th>Next follow-up</th>
+                  </tr>
+                </thead>
+                <tbody id="overview-lead-table"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tool-surface">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Deployment Path</p>
+                <h2>How to roll the CRM out across your organization</h2>
+              </div>
+            </div>
+
+            <div class="deployment-list">
+              <article class="deployment-item">
+                <strong>Pilot with one team first</strong>
+                <p>
+                  Start with one sales team, validate fields and stages, then expand
+                  after the process is stable.
+                </p>
+              </article>
+              <article class="deployment-item">
+                <strong>Move demo storage to a central database</strong>
+                <p>
+                  Replace browser storage with PostgreSQL, SQL Server, or MySQL so the
+                  full company sees the same data.
+                </p>
+              </article>
+              <article class="deployment-item">
+                <strong>Connect login to company identity</strong>
+                <p>
+                  Use Microsoft 365, Google Workspace, or your internal SSO to secure
+                  both portals and control permissions.
+                </p>
+              </article>
+              <article class="deployment-item">
+                <strong>Train, monitor, and govern</strong>
+                <p>
+                  Standardize lead stages, assign ownership rules, and review adoption
+                  weekly after launch.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Static CRM prototype for internal review and process design.</p>
+        <p id="shared-footer-note">This demo stores data locally in the browser.</p>
+      </footer>
+    </div>
+  </body>
+</html>
